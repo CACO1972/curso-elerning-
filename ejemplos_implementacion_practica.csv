@@ -1,0 +1,9 @@
+Herramienta,Caso_de_Uso,Implementación_Práctica,Tiempo_Setup,Costo_Mensual,ROI_Esperado_Mensual,Métricas_de_Éxito
+ChatGPT para Consultas,Responder preguntas frecuentes sobre tratamientos,"Crear prompts específicos: ""Eres un asistente dental. Explica en términos simples qué es una endodoncia""",2 horas,$20,$200,80% menos consultas telefónicas repetitivas
+Chatbot Web Básico,Agendar citas automáticamente desde la web,Usar Chatfuel: Conectar con agenda online + respuestas automáticas FAQ,4 horas,$39,$500,40% más citas agendadas online
+WhatsApp Business,Confirmar citas y enviar recordatorios,WhatsApp Business API: Configurar flujos automáticos para confirmación de citas,6 horas,$50,$400,70% menos no-shows por recordatorios automáticos
+Análisis de Radiografías,Detectar caries en radiografías panorámicas,Overjet/VideaHealth: Cargar radiografía → obtener análisis automático en 30 segundos,1 semana,$300,$2000,60% más detección temprana de caries
+Educación de Pacientes,Explicar procedimientos con videos personalizados,ChatGPT + Canva: Generar explicaciones + crear infografías personalizadas por tratamiento,8 horas,$100,$800,90% mejor comprensión de tratamientos por pacientes
+Gestión de Citas,Optimizar agenda y reducir cancelaciones,Calendly + Zapier: Sincronizar con software dental + enviar recordatorios SMS,1 día,$80,$600,50% mejor utilización de agenda
+Predicción de Implantes,Evaluar probabilidad de éxito de implante,Implantif.AI: Cargar datos paciente → obtener score de probabilidad de éxito,2 semanas,$500,$3000,85% precisión en predicción de éxito
+Seguimiento Post-tratamiento,Monitorear recuperación y detectar complicaciones,Denti.AI: Configurar alertas automáticas por síntomas reportados via formulario,3 días,$150,$1000,30% menos complicaciones post-operatorias
