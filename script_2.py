@@ -75,7 +75,7 @@ flujo_implementacion = {
         'Implementar chatbot básico en website',
         'Conectar WhatsApp Business y configurar respuestas automáticas',
         'Capacitar equipo en uso básico de herramientas IA',
-        'Integrar primera herramientas de análisis de imágenes',
+        'Integrar primera herramienta de análisis de imágenes',
         'Configurar automatización de citas y recordatorios',
         'Implementar sistema de educación automática de pacientes',
         'Configurar seguimiento post-tratamiento automatizado',

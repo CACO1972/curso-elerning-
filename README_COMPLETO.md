@@ -67,7 +67,7 @@ pip (gestor de paquetes de Python)
 ```bash
 # Clonar o descargar el repositorio
 git clone [URL_DEL_REPOSITORIO]
-cd curso-elerning-
+cd curso-elearning-
 
 # Instalar dependencias
 pip install -r requirements.txt

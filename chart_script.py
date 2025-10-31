@@ -8,7 +8,7 @@ course_data = {
     "course_title": "Aplicaciones Prácticas de IA en Odontología",
     "modules": [
         {"module": "Módulo 1: Fundamentos de IA para Dentistas", "subtopics": ["¿Qué es la IA realmente?", "Aplicaciones actuales en odontología", "Mitos vs realidad", "Primeros pasos sin código"]},
-        {"module": "Módulo 2: Chatbots para Consultorios", "subtopics": ["Configuración básica", "Respuestas automáticas", "Integración WhatsApp", "Cases de éxito"]},
+        {"module": "Módulo 2: Chatbots para Consultorios", "subtopics": ["Configuración básica", "Respuestas automáticas", "Integración WhatsApp", "Casos de éxito"]},
         {"module": "Módulo 3: IA en Diagnóstico por Imágenes", "subtopics": ["Detección de caries", "Análisis de radiografías", "Herramientas gratuitas", "Casos prácticos"]},
         {"module": "Módulo 4: Predicción de Tratamientos", "subtopics": ["Modelos predictivos", "Implantes dentales", "Ortodoncia", "Planificación quirúrgica"]},
         {"module": "Módulo 5: Automatización Administrativa", "subtopics": ["Gestión de citas", "Facturación inteligente", "Seguimiento pacientes", "Reportes automáticos"]},
