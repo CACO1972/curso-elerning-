@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ImplantX™ - Herramienta de predicción clínica para implantes dentales. Análisis orientativo basado en factores de riesgo." />
+  <meta name="author" content="ImplantX" />
+  <title>ImplantX™ — Predicción Clínica</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="min-h-screen text-gray-900">
+  <!-- NAVIGATION -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div class="nav-icon" role="img" aria-label="ImplantX Logo"></div>
+        <div>
+          <p class="nav-title">ImplantX™</p>
+          <p class="nav-subtitle">Análisis clínico predictivo</p>
+        </div>
+      </div>
+      <a
+        href="https://wa.me/56935572986"
+        class="nav-cta"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <span class="chip">
+        <span class="h-2 w-2 rounded-full bg-sky-400"></span>
+        Demo funcional — no reemplaza diagnóstico clínico
+      </span>
+      <h1 class="hero-title">
+        Predicción clínica para implantes dentales
+      </h1>
+      <p class="hero-description">
+        Río te guía paso a paso. Al final, obtendrás un resultado orientativo basado en
+        variables clínicas clave y una explicación en lenguaje simple, con acciones prácticas
+        para mejorar tu pronóstico.
+      </p>
+    </section>
+
+    <!-- PROGRESS BAR -->
+    <section class="progress-section">
+      <div class="progress-header">
+        <span>Progreso</span>
+        <span id="progress-label">0%</span>
+      </div>
+      <div class="progress-track">
+        <div id="progress-bar" class="progress-bar" style="width: 0%;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </section>
+
+    <!-- MAIN CARD -->
+    <section class="main-card">
+      <div class="card-layout">
+        <!-- RÍO SIDEBAR -->
+        <aside class="rio-sidebar" role="complementary">
+          <div class="rio-header">
+            <div class="rio-avatar" role="img" aria-label="Río Avatar">
+              <span>🦜</span>
+            </div>
+            <div>
+              <p class="rio-name">Río</p>
+              <p class="rio-role">Asistente ImplantX™</p>
+            </div>
+          </div>
+          <p id="rio-side-msg" class="rio-message">
+            Hola, soy Río. Empezaremos con tus datos básicos para personalizar el informe.
+          </p>
+        </aside>
+
+        <!-- STEP CONTENT -->
+        <div class="step-content">
+          <!-- Step Header -->
+          <div class="step-header">
+            <h2 id="step-title" class="step-title">Paso 1</h2>
+            <p id="step-subtitle" class="step-subtitle">
+              Completa tu nombre, edad y género.
+            </p>
+          </div>
+
+          <!-- Steps Container -->
+          <div class="steps-container">
+            <!-- STEP 0: Basic Data -->
+            <div class="step" data-step="0">
+              <div class="form-grid">
+                <label class="form-label">
+                  <span class="form-label-text">Nombre</span>
+                  <input
+                    id="name"
+                    type="text"
+                    class="form-input"
+                    placeholder="Ej: Ana"
+                    aria-label="Nombre del paciente"
+                  />
+                </label>
+                <label class="form-label">
+                  <span class="form-label-text">Edad</span>
+                  <input
+                    id="age"
+                    type="number"
+                    min="18"
+                    max="120"
+                    class="form-input"
+                    placeholder="Ej: 52"
+                    aria-label="Edad del paciente"
+                  />
+                </label>
+                <label class="form-label">
+                  <span class="form-label-text">Género</span>
+                  <select id="gender" class="form-select" aria-label="Género del paciente">
+                    <option value="">Selecciona</option>
+                    <option value="f">Mujer</option>
+                    <option value="m">Hombre</option>
+                    <option value="o">Otro</option>
+                  </select>
+                </label>
+              </div>
+              <p id="density-hint" class="hint-box">
+                Completa tu edad y género para saber si aplicaremos una evaluación ósea simple (DensityPro™).
+              </p>
+            </div>
+
+            <!-- STEP 1: Smoking -->
+            <div class="step hidden" data-step="1">
+              <p class="form-label-text mb-2">¿Fumas actualmente?</p>
+              <div class="pill-group">
+                <button type="button" data-field="smoking" data-value="no" class="pill smoking-pill">
+                  No fumo
+                </button>
+                <button type="button" data-field="smoking" data-value="<10" class="pill smoking-pill">
+                  &lt;10 cig/día
+                </button>
+                <button type="button" data-field="smoking" data-value="10-20" class="pill smoking-pill">
+                  10–20 cig/día
+                </button>
+                <button type="button" data-field="smoking" data-value=">20" class="pill smoking-pill">
+                  &gt;20 cig/día
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2: Bruxism -->
+            <div class="step hidden" data-step="2">
+              <p class="form-label-text mb-2">
+                ¿Apretas o rechinas los dientes (bruxismo)?
+              </p>
+              <div class="pill-group">
+                <button type="button" data-field="bruxism" data-value="no" class="pill brux-pill">
+                  No
+                </button>
+                <button type="button" data-field="bruxism" data-value="yes" class="pill brux-pill">
+                  Sí
+                </button>
+              </div>
+              <div id="brux-tx-row" class="hidden">
+                <p class="form-label-text mb-2">
+                  Si tienes bruxismo, ¿usas férula o algún tratamiento?
+                </p>
+                <div class="pill-group">
+                  <button type="button" data-field="bruxismTx" data-value="no" class="pill bruxtx-pill">
+                    Sin tratamiento
+                  </button>
+                  <button type="button" data-field="bruxismTx" data-value="yes" class="pill bruxtx-pill">
+                    Con férula / tratamiento
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3: Diabetes -->
+            <div class="step hidden" data-step="3">
+              <p class="form-label-text mb-2">¿Tienes diabetes?</p>
+              <div class="pill-group">
+                <button type="button" data-field="diabetes" data-value="no" class="pill dm-pill">
+                  No
+                </button>
+                <button type="button" data-field="diabetes" data-value="yes" class="pill dm-pill">
+                  Sí
+                </button>
+              </div>
+              <div id="dm-control-row" class="hidden">
+                <p class="form-label-text mb-2">¿Cómo está tu control?</p>
+                <div class="pill-group">
+                  <button type="button" data-field="diabetesControl" data-value="controlled" class="pill dmctl-pill">
+                    Controlada
+                  </button>
+                  <button type="button" data-field="diabetesControl" data-value="uncontrolled" class="pill dmctl-pill">
+                    No controlada
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 4: Cause, Gums, Hygiene -->
+            <div class="step hidden" data-step="4">
+              <div class="form-grid">
+                <label class="form-label">
+                  <span class="form-label-text">Causa principal de la pérdida</span>
+                  <select id="lossCause" class="form-select">
+                    <option value="caries">Caries</option>
+                    <option value="periodontitis">Enfermedad periodontal</option>
+                    <option value="trauma">Trauma / golpe</option>
+                    <option value="otra">Otra</option>
+                  </select>
+                </label>
+                <label class="form-label">
+                  <span class="form-label-text">¿Sangran tus encías?</span>
+                  <select id="gumsBleed" class="form-select">
+                    <option value="no">No</option>
+                    <option value="sometimes">A veces</option>
+                    <option value="often">Frecuente</option>
+                  </select>
+                </label>
+                <label class="form-label">
+                  <span class="form-label-text">Veces que te cepillas al día</span>
+                  <select id="hygienePerDay" class="form-select">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3 o más</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <!-- STEP 5: Teeth Selection -->
+            <div class="step hidden" data-step="5">
+              <p class="form-label-text mb-2">
+                Marca las piezas que necesitas reemplazar (vista espejo).
+              </p>
+              <div id="teeth-grid" class="teeth-grid" role="group" aria-label="Selección de piezas dentales">
+                <!-- Filled by JavaScript -->
+              </div>
+              <p class="mt-2 text-xs text-gray-500">
+                Lo que ves a la izquierda corresponde al lado derecho del paciente.
+              </p>
+            </div>
+
+            <!-- STEP 6: Summary & Calculate -->
+            <div class="step hidden" data-step="6">
+              <p class="form-label-text mb-2">
+                Revisa que la información sea correcta y luego calcula tu resultado orientativo.
+              </p>
+              <div id="summary-box" class="summary-box">
+                <!-- Filled by JavaScript -->
+              </div>
+              <button id="btn-calc" class="btn-primary mt-4">
+                Calcular resultado
+              </button>
+            </div>
+
+            <!-- RESULTS BLOCK -->
+            <div id="results-block" class="hidden">
+              <hr class="results-divider" />
+              <div class="results-header">
+                <h3 class="results-title">
+                  Resultado orientativo para <span id="res-name">Paciente</span>
+                </h3>
+                <p class="results-subtitle">
+                  No es diagnóstico. Debe ser interpretado por un profesional.
+                </p>
+              </div>
+
+              <!-- Results Grid -->
+              <div class="results-grid">
+                <div class="result-card">
+                  <p class="result-label">ImplantX — éxito estimado</p>
+                  <p id="res-ix-score" class="result-value">—%</p>
+                  <span id="res-ix-band" class="result-badge">—</span>
+                </div>
+                <div class="result-card">
+                  <p class="result-label">DensityPro — riesgo óseo</p>
+                  <p id="res-dp-score" class="result-value">—</p>
+                  <span id="res-dp-band" class="result-badge">—</span>
+                </div>
+                <div class="result-card">
+                  <p class="result-label">Piezas seleccionadas</p>
+                  <p id="res-teeth-count" class="result-value">0</p>
+                </div>
+              </div>
+
+              <!-- Factors Section -->
+              <section class="factors-section">
+                <h4 class="section-title">
+                  Factores que influyen en tu resultado
+                </h4>
+                <div id="factors-grid" class="factors-grid">
+                  <!-- Filled by JavaScript -->
+                </div>
+              </section>
+
+              <!-- Action Plan Section -->
+              <section class="plan-section">
+                <h4 class="section-title">Plan de acción sugerido</h4>
+                <ul id="plan-list" class="plan-list">
+                  <!-- Filled by JavaScript -->
+                </ul>
+              </section>
+            </div>
+          </div>
+
+          <!-- NAVIGATION BUTTONS -->
+          <div class="nav-buttons">
+            <button id="btn-prev" class="btn-secondary" disabled>
+              ← Anterior
+            </button>
+            <button id="btn-next" class="btn-primary">
+              Siguiente →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RÍO CHAT SECTION -->
+    <section id="rio-chat-section" class="rio-chat-section hidden">
+      <h3 class="rio-chat-title">
+        <span>🦜</span> Río te explica tus resultados
+      </h3>
+      <p class="rio-chat-description">
+        Presiona el botón y Río generará una explicación en lenguaje simple sobre tu resultado,
+        los factores que influyen y qué puedes hacer para mejorar tu pronóstico.
+      </p>
+      <button id="btn-rio-explain" class="btn-primary rio-chat-button">
+        Escuchar a Río
+      </button>
+      <p id="rio-loading" class="rio-loading hidden">
+        Río está pensando...
+      </p>
+      <div id="rio-message" class="rio-response hidden">
+        <!-- Filled by JavaScript -->
+      </div>
+      <p class="rio-disclaimer">
+        Generado por la API de ChatGPT. Uso clínico siempre bajo criterio profesional.
+      </p>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+      <h4 class="cta-title">¿Quieres ImplantX™ en tu clínica?</h4>
+      <p class="cta-description">
+        Integración a tu web, reporte PDF con tu branding y calibración clínica personalizada para tu realidad.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/56935572986" class="btn-primary" target="_blank" rel="noopener noreferrer">
+          Agendar conversación
+        </a>
+        <a href="mailto:contacto@implantx.ai" class="btn-ghost">
+          Escribir por email
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Application Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+Categoría,Herramienta,Precio,Dificultad_Implementación,Tiempo_Setup,Mejor_Para
+Chatbots,ChatGPT + Zapier,Gratis + $20/mes,Fácil,2-4 horas,Consultorios pequeños
+Chatbots,Botpress,$50/mes,Media,1-2 días,Consultorios medianos
+Chatbots,Chatfuel,Gratis + $15/mes,Fácil,2-4 horas,Inicio rápido
+Chatbots,ManyChat,$15/mes,Fácil,2-4 horas,Marketing dental
+Diagnóstico por Imágenes,VideaHealth,Consultar,Media,1-2 semanas,Diagnóstico avanzado
+Diagnóstico por Imágenes,Overjet,Consultar,Media,1-2 semanas,Análisis radiográfico
+Diagnóstico por Imágenes,Diagnocat,Consultar,Media,1-2 semanas,Detección temprana
+Diagnóstico por Imágenes,Pearl AI,Consultar,Media,1-2 semanas,Educación paciente
+Gestión de Práctica,Denti.AI,Desde $99/mes,Media,3-5 días,Documentación clínica
+Gestión de Práctica,Denota.AI,Desde $29/mes,Fácil,1-2 horas,Notas rápidas
+Gestión de Práctica,Oryx Dental,Consultar,Alta,2-4 semanas,Gestión completa
+Gestión de Práctica,Henry Schein One AI,Consultar,Alta,2-4 semanas,Práctica empresarial
+Comunicación Pacientes,Arini AI,Desde $200/mes,Media,1 semana,Recepción virtual
+Comunicación Pacientes,Quriobot,Desde $39/mes,Fácil,2-4 horas,Web básica
+Comunicación Pacientes,Teero,Consultar,Media,1 semana,Comunicación integral
+Comunicación Pacientes,DentalMonitoring,Consultar,Alta,2-4 semanas,Ortodoncia
+Predicción/Planificación,Implantif.AI,Consultar,Media,1 semana,Identificación implantes
+Predicción/Planificación,Planmeca AI,Incluido en software,Alta,Incluido,Planificación quirúrgica
+Predicción/Planificación,PreVu Dental,Desde $49/mes,Fácil,2-4 horas,Simulaciones estéticas
+Predicción/Planificación,CITYPRO (personalizado),Desarrollo personalizado,Alta,2-6 meses,Apps predictivas personalizadas

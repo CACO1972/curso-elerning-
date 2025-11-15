@@ -1,0 +1,990 @@
+/* ==========================================
+   ImplantX™ - Clinical Prediction Styles
+   ========================================== */
+
+:root {
+  --brand: #0ea5e9;
+  --brand-dark: #0284c7;
+  --brand-light: #38bdf8;
+  --success: #22c55e;
+  --success-dark: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --border-radius-sm: 0.75rem;
+  --border-radius-md: 1rem;
+  --border-radius-lg: 1.5rem;
+  --border-radius-xl: 2rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --transition: all 0.2s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", Roboto, sans-serif;
+  background: #f5f5f7;
+  margin: 0;
+  padding: 0;
+  color: var(--gray-900);
+  line-height: 1.6;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.3;
+  margin: 0;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+.btn-primary,
+.btn-secondary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-xl);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--brand-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary,
+.btn-ghost {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  color: var(--gray-700);
+}
+
+.btn-secondary:hover:not(:disabled),
+.btn-ghost:hover:not(:disabled) {
+  background: var(--gray-50);
+  border-color: var(--brand);
+}
+
+/* ==========================================
+   CHIPS & BADGES
+   ========================================== */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-600);
+}
+
+.badge {
+  display: inline-flex;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.badge-success {
+  background: rgba(34, 197, 94, 0.1);
+  color: rgb(22, 163, 74);
+}
+
+.badge-warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: rgb(217, 119, 6);
+}
+
+.badge-danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: rgb(220, 38, 38);
+}
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-icon {
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: var(--border-radius-md);
+  background: radial-gradient(circle at 30% 30%, #38bdf8, #0f172a);
+}
+
+.nav-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+
+.nav-subtitle {
+  font-size: 0.6875rem;
+  color: var(--gray-500);
+  margin-top: -0.25rem;
+}
+
+.nav-cta {
+  display: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 640px) {
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-container {
+    padding: 0 2rem;
+  }
+}
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+main {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem 5rem;
+}
+
+@media (min-width: 640px) {
+  main {
+    padding: 0 1.5rem 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding: 0 2rem 5rem;
+  }
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+
+.hero {
+  padding-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .hero {
+    padding-top: 2.5rem;
+  }
+}
+
+.hero-title {
+  margin-top: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.hero-description {
+  margin-top: 0.75rem;
+  max-width: 48rem;
+  color: var(--gray-600);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+/* ==========================================
+   PROGRESS BAR
+   ========================================== */
+
+.progress-section {
+  margin-top: 1.5rem;
+}
+
+.progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  color: var(--gray-600);
+  margin-bottom: 0.5rem;
+}
+
+.progress-track {
+  height: 0.5rem;
+  width: 100%;
+  border-radius: 9999px;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--brand-light);
+  border-radius: 9999px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* ==========================================
+   MAIN CARD
+   ========================================== */
+
+.main-card {
+  margin-top: 1.5rem;
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .main-card {
+    border-radius: 1.5rem;
+  }
+}
+
+.card-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .card-layout {
+    flex-direction: row;
+  }
+}
+
+/* ==========================================
+   RÍO SIDEBAR
+   ========================================== */
+
+.rio-sidebar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgb(240, 249, 255);
+  padding: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .rio-sidebar {
+    width: 20rem;
+    border-bottom: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
+
+.rio-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rio-avatar {
+  height: 3rem;
+  width: 3rem;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, #38bdf8, #0f172a);
+  font-size: 1.25rem;
+}
+
+.rio-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.rio-role {
+  font-size: 0.6875rem;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.rio-message {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+/* ==========================================
+   STEP CONTENT
+   ========================================== */
+
+.step-content {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .step-content {
+    padding: 2.5rem;
+  }
+}
+
+.step-header {
+  margin-bottom: 1.5rem;
+}
+
+.step-title {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.step-subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.step {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.step.hidden {
+  display: none;
+}
+
+/* ==========================================
+   FORM ELEMENTS
+   ========================================== */
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+}
+
+.form-label-text {
+  color: var(--gray-700);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.form-input,
+.form-select {
+  margin-top: 0.25rem;
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: var(--transition);
+  font-size: 0.875rem;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: var(--brand);
+  ring: 2px;
+  ring-color: rgba(14, 165, 233, 0.2);
+}
+
+.form-input::placeholder {
+  color: var(--gray-300);
+}
+
+.hint-box {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  background: var(--gray-50);
+  border-radius: var(--border-radius-md);
+  padding: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.hint-box.warning {
+  background: rgb(254, 243, 199);
+  border-color: rgb(253, 224, 71);
+  color: rgb(146, 64, 14);
+}
+
+/* ==========================================
+   PILLS
+   ========================================== */
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.pill {
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  background: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pill:hover {
+  border-color: var(--brand);
+  background: rgb(240, 249, 255);
+}
+
+.pill.selected {
+  border-color: var(--brand);
+  background: rgb(240, 249, 255);
+  color: var(--brand-dark);
+}
+
+/* ==========================================
+   TEETH GRID
+   ========================================== */
+
+.teeth-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.5rem;
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.75rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+.tooth-btn {
+  aspect-ratio: 1;
+  border-radius: var(--border-radius-md);
+  font-size: inherit;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--gray-50);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooth-btn:hover {
+  border-color: var(--brand);
+}
+
+.tooth-btn.tooth-selected {
+  background-color: var(--brand);
+  color: white;
+  border-color: transparent;
+}
+
+/* ==========================================
+   SUMMARY BOX
+   ========================================== */
+
+.summary-box {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  color: var(--gray-700);
+  background: var(--gray-50);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.75rem;
+}
+
+.summary-box p {
+  margin-bottom: 0.5rem;
+}
+
+.summary-box p:last-child {
+  margin-bottom: 0;
+}
+
+.summary-box strong {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+/* ==========================================
+   RESULTS
+   ========================================== */
+
+.results-divider {
+  margin: 1rem 0;
+  border: 0;
+  border-top: 1px dashed var(--gray-200);
+}
+
+.results-header {
+  margin-bottom: 1rem;
+}
+
+.results-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.results-subtitle {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  color: var(--gray-500);
+}
+
+.results-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .results-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.result-card {
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+}
+
+.result-label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-500);
+}
+
+.result-value {
+  margin-top: 0.25rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.result-badge {
+  display: inline-flex;
+  margin-top: 0.5rem;
+  border-radius: 9999px;
+  background: var(--gray-100);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   FACTORS
+   ========================================== */
+
+.factors-section,
+.plan-section {
+  margin-top: 1.5rem;
+}
+
+.section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 0.75rem;
+}
+
+.factors-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .factors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.factor-card {
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.factor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.factor-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.factor-impact {
+  border-radius: 9999px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.factor-impact.high {
+  background: rgba(239, 68, 68, 0.1);
+  color: rgb(220, 38, 38);
+}
+
+.factor-impact.moderate {
+  background: rgba(245, 158, 11, 0.1);
+  color: rgb(217, 119, 6);
+}
+
+.factor-impact.low {
+  background: rgba(34, 197, 94, 0.1);
+  color: rgb(22, 163, 74);
+}
+
+.factor-text {
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  margin-top: 0.5rem;
+}
+
+.factor-alternatives {
+  margin-top: 0.5rem;
+}
+
+.alternatives-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 0.25rem;
+}
+
+.alternatives-list {
+  margin-top: 0.25rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.alternatives-list li {
+  font-size: 0.875rem;
+  color: var(--gray-700);
+}
+
+/* ==========================================
+   ACTION PLAN
+   ========================================== */
+
+.plan-list {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.plan-list li {
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  margin-bottom: 0.25rem;
+}
+
+/* ==========================================
+   NAVIGATION BUTTONS
+   ========================================== */
+
+.nav-buttons {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ==========================================
+   RÍO CHAT SECTION
+   ========================================== */
+
+.rio-chat-section {
+  margin-top: 2rem;
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgb(186, 230, 253);
+  background: rgba(240, 249, 255, 0.7);
+  padding: 1.5rem;
+}
+
+.rio-chat-title {
+  font-size: clamp(1.125rem, 3vw, 1.25rem);
+  font-weight: 600;
+  color: rgb(3, 105, 161);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rio-chat-description {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.rio-chat-button {
+  margin-top: 0.75rem;
+}
+
+.rio-loading {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+.rio-response {
+  margin-top: 1rem;
+  white-space: pre-line;
+  font-size: 0.875rem;
+  color: var(--gray-800);
+  background: white;
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.rio-disclaimer {
+  margin-top: 0.5rem;
+  font-size: 0.6875rem;
+  color: var(--gray-500);
+}
+
+/* ==========================================
+   CTA SECTION
+   ========================================== */
+
+.cta-section {
+  margin-top: 2.5rem;
+  border-radius: var(--border-radius-xl);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--gray-50);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cta-description {
+  margin-top: 0.5rem;
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+.cta-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================
+   LOADING STATE
+   ========================================== */
+
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 0.75rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus styles for keyboard navigation */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+
+@media print {
+  body {
+    background: white;
+  }
+
+  header,
+  .nav-buttons,
+  .rio-chat-section,
+  .cta-section {
+    display: none;
+  }
+
+  .main-card {
+    border: 1px solid #ddd;
+    box-shadow: none;
+  }
+}
